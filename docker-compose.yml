@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  tearc.portal:
+    image: tearc.portal
+    build:
+      context: ./Tearc.Portal
+      dockerfile: Dockerfile

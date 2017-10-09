@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Web\Web.csproj", "{3FABB3D5-0CC8-48D8-BC09-4DFE73331A93}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstrapper", "Bootstrapper", "{10BA63C7-A81A-4CDF-8ADB-979EEB5B387B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{C0451C4E-85D8-47A4-A2E7-562174C451D1}"
@@ -25,9 +23,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tearc.Repository", "Tearc.R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tearc.Utils.Common", "Tearc.Utils.Common\Tearc.Utils.Common.csproj", "{A058518F-DB73-44AE-B9C3-8DFCE109AF8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tearc.Service", "Tearc.Service\Tearc.Service.csproj", "{38580E21-A213-4157-BABA-987FA17E34F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tearc.Service", "Tearc.Service\Tearc.Service.csproj", "{38580E21-A213-4157-BABA-987FA17E34F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tearc.Service.Implementation", "Tearc.Service.Implementation\Tearc.Service.Implementation.csproj", "{BB1AA2F8-3226-4007-812B-B96683B3678D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tearc.Service.Implementation", "Tearc.Service.Implementation\Tearc.Service.Implementation.csproj", "{BB1AA2F8-3226-4007-812B-B96683B3678D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentations", "Presentations", "{1F00B2E8-254A-4969-975B-F772592EFCC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tearc.Portal", "Tearc.Portal\Tearc.Portal.csproj", "{0872D678-49FD-441A-9641-75B5BC733979}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B8FC0704-1B9B-4C3B-915C-CA8D15DD95CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +39,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3FABB3D5-0CC8-48D8-BC09-4DFE73331A93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FABB3D5-0CC8-48D8-BC09-4DFE73331A93}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3FABB3D5-0CC8-48D8-BC09-4DFE73331A93}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3FABB3D5-0CC8-48D8-BC09-4DFE73331A93}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C9C57746-CB5F-46C7-AE40-8AF3AC60ED54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C9C57746-CB5F-46C7-AE40-8AF3AC60ED54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9C57746-CB5F-46C7-AE40-8AF3AC60ED54}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -71,6 +71,14 @@ Global
 		{BB1AA2F8-3226-4007-812B-B96683B3678D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB1AA2F8-3226-4007-812B-B96683B3678D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB1AA2F8-3226-4007-812B-B96683B3678D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0872D678-49FD-441A-9641-75B5BC733979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0872D678-49FD-441A-9641-75B5BC733979}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0872D678-49FD-441A-9641-75B5BC733979}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0872D678-49FD-441A-9641-75B5BC733979}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8FC0704-1B9B-4C3B-915C-CA8D15DD95CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8FC0704-1B9B-4C3B-915C-CA8D15DD95CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8FC0704-1B9B-4C3B-915C-CA8D15DD95CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8FC0704-1B9B-4C3B-915C-CA8D15DD95CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +92,7 @@ Global
 		{A058518F-DB73-44AE-B9C3-8DFCE109AF8D} = {CD9B6F24-07EE-4329-BB77-AD6369FEF35F}
 		{38580E21-A213-4157-BABA-987FA17E34F3} = {B4D5ECE4-0B7D-4193-8308-9D8A123C9740}
 		{BB1AA2F8-3226-4007-812B-B96683B3678D} = {B4D5ECE4-0B7D-4193-8308-9D8A123C9740}
+		{0872D678-49FD-441A-9641-75B5BC733979} = {1F00B2E8-254A-4969-975B-F772592EFCC3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2CA5B0E8-EFAC-4696-84EC-5CC8C0165410}

@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,11 +9,11 @@ using System.Threading.Tasks;
 namespace Tearc.Entity.Main
 {
     [Table("Users")]
-    public class User : IdentityUser<int, UserLogin, UserRole, UserClaim>
+    public class User
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public override int Id { get; set; }
+        public int Id { get; set; }
         [StringLength(30)]
         public string FirstName { get; set; }
         [StringLength(30)]
@@ -41,37 +39,6 @@ namespace Tearc.Entity.Main
         public bool IsImpersonated { get; set; }
         [NotMapped]
         public int ImpersonatorID { get; set; }
-
-        public User()
-        {
-        }
-
-        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User, int> manager)
-        {
-            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
-            var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-
-            GenerateUserRightClaim(userIdentity);
-
-            // Add custom user claims here
-            userIdentity.AddClaim(new Claim(ClaimTypes.GivenName, FullName));
-            userIdentity.AddClaim(new Claim(CustomClaimTypes.FirstName, FirstName));
-            userIdentity.AddClaim(new Claim(CustomClaimTypes.LastName, LastName));
-            userIdentity.AddClaim(new Claim(CustomClaimTypes.IsImpersonated, IsImpersonated.ToString()));
-            userIdentity.AddClaim(new Claim(CustomClaimTypes.ImpersonatorID, ImpersonatorID.ToString()));
-            userIdentity.AddClaim(new Claim(CustomClaimTypes.Consent, Consent.ToString()));
-
-            return userIdentity;
-        }
-
-        private void GenerateUserRightClaim(ClaimsIdentity userIdentity)
-        {
-            var roles = userIdentity.Claims
-                    .Where(m => m.Type == ClaimTypes.Role)
-                    .Select(m => m.Value)
-                    .ToList();
-            // assign user right here
-        }
     }
 
     public class CustomClaimTypes

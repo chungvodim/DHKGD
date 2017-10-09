@@ -1,4 +1,4 @@
-﻿using CE.Enum;
+﻿using Tearc.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,11 +6,11 @@ using System.Linq;
 
 namespace Tearc.Dto
 {
-    public class UserDto : BaseDto
+    public class UserDto
     {
         [Key]
         public int UserID { get; set; }
-        public override int ID { get { return UserID; } }
+        public int ID { get { return UserID; } }
         [Required]
         public string UserName { get; set; }
         [Required]

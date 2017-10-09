@@ -1,4 +1,4 @@
-﻿using CE.Enum;
+﻿using Tearc.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

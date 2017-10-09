@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Tearc.Utils.Common\Tearc.Utils.Common.csproj" />
+  </ItemGroup>
+
 </Project>

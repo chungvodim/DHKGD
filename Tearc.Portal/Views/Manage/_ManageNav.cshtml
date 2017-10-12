@@ -1,5 +1,6 @@
 ﻿@using Tearc.Portal.Views.Manage
-@inject SignInManager<ApplicationUser> SignInManager
+@using Tearc.Entity.Main
+@inject SignInManager<User> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }

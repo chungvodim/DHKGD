@@ -6,3 +6,9 @@ services:
     build:
       context: ./Tearc.Portal
       dockerfile: Dockerfile
+
+  tearc.management:
+    image: tearc.management
+    build:
+      context: ./../Tearc.Management
+      dockerfile: Dockerfile

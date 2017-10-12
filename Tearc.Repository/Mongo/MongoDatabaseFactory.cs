@@ -12,7 +12,7 @@ namespace Tearc.Repository.Mongo
     {
         public static IMongoDatabase Create(string connectionName = "Mongo")
         {
-            var url = new MongoUrl("DefaultConnection");
+            var url = new MongoUrl("TearcConnection");
             var client = new MongoClient(url);
             var db = client.GetDatabase(url.DatabaseName);
 

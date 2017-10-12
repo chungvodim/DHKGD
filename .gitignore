@@ -229,3 +229,4 @@ _Pvt_Extensions
 # FAKE - F# Make
 .fake/
 CE.Web/Logs/log.txt
+Tearc.Portal/secrets.json

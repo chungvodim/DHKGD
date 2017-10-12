@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Tearc.Portal.Data;
 using Tearc.Portal.Models;
 using Tearc.Portal.Services;
+using Tearc.Repository.Main;
+using Tearc.Entity.Main;
 
 namespace Tearc.Portal
 {
@@ -26,11 +28,11 @@ namespace Tearc.Portal
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<MainDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<MainDbContext>()
                 .AddDefaultTokenProviders();
 
             // Add application services.

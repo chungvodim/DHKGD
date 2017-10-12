@@ -10,5 +10,5 @@ services:
   tearc.management:
     image: tearc.management
     build:
-      context: ./../Tearc.Management
+      context: ./Tearc.Management
       dockerfile: Dockerfile

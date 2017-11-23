@@ -11,6 +11,7 @@ namespace Tearc.Entity.Main
 {
     public class User : IdentityUser
     {
+        public DateTime DOB { get; set; }
     }
 
     public class CustomClaimTypes
